@@ -12,7 +12,6 @@ public class PlatformGenerator : MonoBehaviour {
 
 	public GameObject SpawnMarker;
 	public GameObject DestroyMarker;
-	[SerializeField]
 	public Platforms[] Platforms;
 
 	public Platform currentPlatform;
