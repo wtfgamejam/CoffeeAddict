@@ -19,8 +19,12 @@ public class PlatformerCharacter2D : MonoBehaviour
     private Transform ceilingCheck; // A position marking where to check for ceilings
     private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
     private Animator anim; // Reference to the player's animator component.
+	private BackgroundScroller scroller;
 
 	private bool doubleJump = false;
+
+	private float previousX = 0f;
+	private float positionDelta = 0f;
 
     private void Awake()
     {
@@ -28,6 +32,9 @@ public class PlatformerCharacter2D : MonoBehaviour
         groundCheck = transform.Find("GroundCheck");
         ceilingCheck = transform.Find("CeilingCheck");
         anim = GetComponent<Animator>();
+		scroller = GetComponent<BackgroundScroller>();
+
+		previousX = this.transform.localPosition.x;
     }
 
 
@@ -72,7 +79,17 @@ public class PlatformerCharacter2D : MonoBehaviour
             anim.SetFloat("Speed", Mathf.Abs(move));
 
             // Move the character
-			rigidbody2d.velocity = new Vector2(move*maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			float speed = move*maxSpeed;
+			rigidbody2d.velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
+
+			if(scroller != null)
+			{
+				positionDelta = previousX - rigidbody2d.position.x;
+				scroller.UpdateBackground(-positionDelta/1000);
+				previousX = rigidbody2d.position.x;
+			}
+
+
 
             // If the input is moving the player right and the player is facing left...
             if (move > 0 && !facingRight)
