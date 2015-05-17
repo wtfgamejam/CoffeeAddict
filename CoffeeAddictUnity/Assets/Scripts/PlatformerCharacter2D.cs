@@ -148,7 +148,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		Dead = true;
 		if(hud != null)
 		{
-			hud.Dead = true;
+			hud.OnDeath();
 			//DataUtils.AddScoreToPlayerStats(hud.Score);
 		}
 		

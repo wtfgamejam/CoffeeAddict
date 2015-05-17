@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class HUDController : MonoBehaviour {
 
 	public Text ScoreField;
+	public EndGameDialog EndGame;
 
 	public int ScoreIncrement = 1;
 	public int Score = 0;
@@ -14,7 +15,7 @@ public class HUDController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Score = 0;
-
+		EndGame.gameObject.SetActive(false);
 		StartCoroutine(ScoreTick());
 	}
 
@@ -42,5 +43,20 @@ public class HUDController : MonoBehaviour {
 		Debug.Log("Score! "+value);
 		Score += value;
 		this.UpdateScore();
+	}
+
+
+	public void OnDeath()
+	{
+		Dead = true;
+		ScoreField.enabled = false;
+
+		EndGame.gameObject.SetActive(true);
+
+	}
+
+	public void OnPlayAgain()
+	{
+		Application.LoadLevel(0);
 	}
 }
