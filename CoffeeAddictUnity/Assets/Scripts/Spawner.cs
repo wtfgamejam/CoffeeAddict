@@ -14,9 +14,12 @@ public class Spawner : MonoBehaviour {
 	
 	public void Spawn()
 	{
-		GameObject go = obj[Random.Range(0, obj.Length)];
-		Instantiate(go, transform.position, Quaternion.identity);
+		if(this.enabled)
+		{
+			GameObject go = obj[Random.Range(0, obj.Length)];
+			Instantiate(go, transform.position, Quaternion.identity);
 
-		Invoke("Spawn", Random.Range(this.SpawnMin, this.SpawnMax));
+			Invoke("Spawn", Random.Range(this.SpawnMin, this.SpawnMax));
+		}
 	}
 }

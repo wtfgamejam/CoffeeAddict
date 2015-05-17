@@ -29,6 +29,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	private float previousX = 0f;
 	private float positionDelta = 0f;
 
+	public bool Dead = false;
+
     private void Awake()
     {
         // Setting up references.
@@ -95,7 +97,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 			if(scroller != null)
 			{
 				positionDelta = previousX - rigidbody2d.position.x;
-				scroller.UpdateBackground(-positionDelta/1000);
+				scroller.UpdateBackground(-positionDelta/100);
 				previousX = rigidbody2d.position.x;
 			}
 
@@ -139,4 +141,16 @@ public class PlatformerCharacter2D : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+	public void Death()
+	{
+		Debug.Log("Death");
+		Dead = true;
+		if(hud != null)
+		{
+			hud.Dead = true;
+			//DataUtils.AddScoreToPlayerStats(hud.Score);
+		}
+		
+	}
 }

@@ -22,11 +22,10 @@ public class Platformer2DUserControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Read the inputs.
-        //bool crouch = Input.GetKey(KeyCode.LeftControl);
-		//float h = Input.GetAxis("Horizontal");
-        // Pass all parameters to the character control script.
-        character.Move(1, false, jump);
-        jump = false;
+		if(!character.Dead)
+		{
+	        character.Move(1, false, jump);
+	        jump = false;
+		}
     }
 }

@@ -8,6 +8,8 @@ public class HUDController : MonoBehaviour {
 
 	public int ScoreIncrement = 1;
 	public int Score = 0;
+
+	public bool Dead = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -23,13 +25,16 @@ public class HUDController : MonoBehaviour {
 
 	private IEnumerator ScoreTick () 
 	{
-		Score += ScoreIncrement;
+		if(!Dead)
+		{
+			Score += ScoreIncrement;
 
-		yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(1f);
 
-		this.UpdateScore();
+			this.UpdateScore();
 
-		StartCoroutine(ScoreTick());
+			StartCoroutine(ScoreTick());
+		}
 	}
 
 	public void AddScore(int value)

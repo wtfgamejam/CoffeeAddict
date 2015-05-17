@@ -8,6 +8,8 @@ public class CollectableController : MonoBehaviour {
 	private SpriteRenderer rend;
 	private AudioSource audio;
 
+	private bool hit = false;
+
 	void Awake()
 	{
 		this.rend = this.GetComponent<SpriteRenderer>();
@@ -25,8 +27,9 @@ public class CollectableController : MonoBehaviour {
 		if(other.tag == "Player")
 		{
 			PlatformerCharacter2D player = other.gameObject.GetComponent<PlatformerCharacter2D>();
-			if(player != null)
+			if(player != null && !hit)
 			{
+				hit = true;
 				this.audio.Play();
 
 				this.rend.color = new Color(0f,0f,0f,0f);
