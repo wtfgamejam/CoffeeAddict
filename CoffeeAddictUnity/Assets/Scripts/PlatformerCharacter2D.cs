@@ -2,6 +2,9 @@
 
 public class PlatformerCharacter2D : MonoBehaviour
 {
+	public HUDController hud;
+	public int CollectableScore = 50;
+
     private bool facingRight = true; // For determining which way the player is currently facing.
 
     [SerializeField] private float maxSpeed = 10f; // The fastest the player can travel in the x axis.
@@ -53,6 +56,13 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
     }
 
+	public void ScoreCollectable()
+	{
+		if(hud != null)
+		{
+			hud.AddScore(CollectableScore);
+		}
+	}
 
     public void Move(float move, bool crouch, bool jump)
     {

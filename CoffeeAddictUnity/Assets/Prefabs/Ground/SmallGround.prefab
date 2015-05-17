@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 435906}
+  - 114: {fileID: 11405524}
   m_Layer: 0
   m_Name: SmallGround
   m_TagString: Untagged
@@ -32,6 +33,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &190622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 401244}
+  m_Layer: 0
+  m_Name: CollectableLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 4476612413928447662, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &401244
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.32000005, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 435906}
+  m_RootOrder: 0
 --- !u!4 &423318
 Transform:
   m_ObjectHideFlags: 1
@@ -43,7 +71,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435906}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &435906
 Transform:
   m_ObjectHideFlags: 1
@@ -54,6 +82,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 401244}
   - {fileID: 423318}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,6 +99,20 @@ BoxCollider2D:
   m_Offset: {x: 1.25, y: .3125}
   serializedVersion: 2
   m_Size: {x: 2.5, y: .625}
+--- !u!114 &11405524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1747872d1978e4dfab0da08ec4c5ece8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collectable: {fileID: 163986, guid: 67c0cad193e6d430a9628f23e9a49621, type: 2}
+  CollectableLocation: {fileID: 190622}
+  CollectableChance: 3
 --- !u!212 &21297024
 SpriteRenderer:
   m_ObjectHideFlags: 1

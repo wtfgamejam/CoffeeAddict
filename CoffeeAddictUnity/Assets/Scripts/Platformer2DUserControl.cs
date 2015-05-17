@@ -13,11 +13,6 @@ public class Platformer2DUserControl : MonoBehaviour
 
     private void Update()
     {
-		if(Input.GetButtonDown("Jump"))
-		{
-			Debug.Log("Jump");
-		}
-
         if(!jump)
 		{
             // Read the jump input in Update so button presses aren't missed.
