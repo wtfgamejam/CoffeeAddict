@@ -16,6 +16,7 @@ public class HUDController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Score = 0;
+		UpdateScore();
 		EndGame.gameObject.SetActive(false);
 		StartCoroutine(ScoreTick());
 	}
