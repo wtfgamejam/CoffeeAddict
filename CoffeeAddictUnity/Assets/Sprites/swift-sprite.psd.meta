@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 706f5abe505314eaa9e29c5b4799ef78
+timeCreated: 1431983898
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: swift-sprite_0
+    21300002: swift-sprite_1
+    21300004: swift-sprite_2
+    21300006: swift-sprite_3
+    21300008: swift-sprite_4
+    21300010: swift-sprite_5
+    21300012: swift-sprite_6
+    21300014: swift-sprite_7
+    21300016: swift-sprite_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: .223147467, y: .863543749}
+  spriteBorder: {x: 20, y: 844, z: 688, w: 12}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: swift-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 851
+        width: 278
+        height: 150
+      alignment: 9
+      pivot: {x: .744817019, y: .232561842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swift-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 603
+        width: 265
+        height: 384
+      alignment: 9
+      pivot: {x: .664096355, y: .321326882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swift-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 759
+        width: 125
+        height: 204
+      alignment: 9
+      pivot: {x: .152115718, y: .888432801}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swift-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 735
+        width: 158
+        height: 94
+      alignment: 9
+      pivot: {x: .897547007, y: .746726155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swift-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 586
+        width: 127
+        height: 110
+      alignment: 9
+      pivot: {x: .142376274, y: .90410769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swift-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 569
+        width: 96
+        height: 89
+      alignment: 9
+      pivot: {x: .228215531, y: .858307898}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swift-sprite_6
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 388
+        width: 96
+        height: 154
+      alignment: 9
+      pivot: {x: .248347595, y: .945522547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swift-sprite_7
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 340
+        width: 181
+        height: 216
+      alignment: 9
+      pivot: {x: .227714911, y: .875800788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: swift-sprite_8
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 165
+        width: 110
+        height: 179
+      alignment: 9
+      pivot: {x: .0519673452, y: .116701178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
