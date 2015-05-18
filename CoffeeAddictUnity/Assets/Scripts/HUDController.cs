@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class HUDController : MonoBehaviour {
 
@@ -51,8 +52,10 @@ public class HUDController : MonoBehaviour {
 		Dead = true;
 		ScoreField.enabled = false;
 
-		EndGame.gameObject.SetActive(true);
+		List<string> highscores = DataUtils.AddScoreToPlayerStats(Score);
 
+		EndGame.AddScores(highscores, Score.ToString());
+		EndGame.gameObject.SetActive(true);
 	}
 
 	public void OnPlayAgain()

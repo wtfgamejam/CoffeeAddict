@@ -15,36 +15,58 @@ public class DataUtils
 	/// Adds the score to players highscores. Up to 10 highscors.
 	/// </summary>
 	/// <param name="score">Score.</param>
-	public static void AddScoreToPlayerStats(int score)
+	public static List<string> AddScoreToPlayerStats(int score)
 	{
-		string data = PlayerPrefs.GetString("highscores");
-		List<string> highscores = new List<string>(data.Split(','));
 		List<string> newHighscores = new List<string>();
 
-		if(highscores != null)
+		//PlayerPrefs.SetString("highscores","");
+
+		string data = PlayerPrefs.GetString("highscores");
+
+		if(data == null || data == "")
 		{
-			//loop through scores and insert at correct place
-			foreach(string s in highscores)
+			newHighscores.Add(score.ToString());
+		}
+		else
+		{
+			List<string> highscores = new List<string>(data.Split(','));
+
+			if(highscores != null)
 			{
-				if(newHighscores.Count <= 10)
+				int index = 0;
+				int pos = 0;
+				bool scoreAdded = false;
+				//loop through scores and insert at correct place
+				//for(int i = 0; i < hs.Length; i++)
+				foreach(string s in highscores)
 				{
-					if(score > int.Parse(s))
+
+					if(score < int.Parse(s))
 					{
-						newHighscores.Add(score.ToString());
+						pos = index + 1;
+					}
+
+					if(newHighscores.Count < 10)
+					{
 						newHighscores.Add(s);
 					}
-					else
-					{
-						newHighscores.Add(s);
-						newHighscores.Add(score.ToString());
-					}
+
+					index++;
+
 				}
+
+				if(pos < 10)
+				{
+					newHighscores.Insert(pos, score.ToString());
+				}
+	
 			}
-
-			string newData = newHighscores.ToString();
-			PlayerPrefs.SetString("highscores",newData);
-
 		}
 
+		string newData = string.Join(",", newHighscores.ToArray());
+		Debug.Log(newData);
+		PlayerPrefs.SetString("highscores",newData);
+
+		return newHighscores;
 	}
 }
