@@ -29,7 +29,7 @@ public class EndGameDialog : MonoBehaviour {
 				scoreText.color = Color.yellow;
 			}
 
-			score.transform.parent = HighScoreParent;
+			score.transform.SetParent(HighScoreParent);
 
 			score.GetComponent<RectTransform>().localScale = Vector3.one;
 
