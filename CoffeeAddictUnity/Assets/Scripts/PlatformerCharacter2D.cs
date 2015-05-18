@@ -56,6 +56,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 		{
 			doubleJump = false;
 		}
+
+		if(hud.Meter <= 0)
+		{
+			this.Death();
+		}
     }
 
 	public void ScoreCollectable()
