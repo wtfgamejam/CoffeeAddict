@@ -13,6 +13,7 @@ public class HUDController : MonoBehaviour {
 	public Text ScoreField;
 	public Text MeterField;
 	public EndGameDialog EndGame;
+	public MeterController MeterBar;
 
 	public int ScoreIncrement = 1;
 	public int Score = 0;
@@ -41,7 +42,8 @@ public class HUDController : MonoBehaviour {
 
 	private void UpdateMeter()
 	{
-		MeterField.text = Meter.ToString();
+		//MeterField.text = Meter.ToString();
+		MeterBar.MoveMeter(Meter);
 	}
 
 	private IEnumerator ScoreTick () 
@@ -87,7 +89,8 @@ public class HUDController : MonoBehaviour {
 	{
 		Dead = true;
 		//ScoreField.enabled = false;
-		MeterField.enabled = false;
+		//MeterField.enabled = false;
+		MeterBar.gameObject.SetActive(false);
 
 		List<string> highscores = DataUtils.AddScoreToPlayerStats(Score);
 

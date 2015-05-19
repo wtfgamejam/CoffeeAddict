@@ -77,7 +77,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		Rigidbody2D rigidbody2d = GetComponent<Rigidbody2D>();
 
         // If crouching, check to see if the character can stand up
-        if (!crouch && anim.GetBool("Crouch"))
+        if (!crouch)
         {
             // If the character has a ceiling preventing them from standing up, keep them crouching
             if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
@@ -94,7 +94,7 @@ public class PlatformerCharacter2D : MonoBehaviour
             move = (crouch ? move*crouchSpeed : move);
 
             // The Speed animator parameter is set to the absolute value of the horizontal input.
-            anim.SetFloat("Speed", Mathf.Abs(move));
+            //anim.SetFloat("Speed", Mathf.Abs(move));
 
             // Move the character
 			float speed = move*maxSpeed;

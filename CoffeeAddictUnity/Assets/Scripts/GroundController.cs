@@ -27,7 +27,7 @@ public class GroundController : MonoBehaviour {
 			collect.transform.parent = CollectableLocation.transform;
 		}
 
-		int matChance = Random.Range(0, materials.Length +1);
+		int matChance = Random.Range(0, materials.Length);
 		rend.material = materials[matChance];
 		rend.sortingOrder = order;
 	}
