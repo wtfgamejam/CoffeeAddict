@@ -21,7 +21,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     private bool grounded = false; // Whether or not the player is grounded.
     private Transform ceilingCheck; // A position marking where to check for ceilings
     private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-    private Animator anim; // Reference to the player's animator component.
+    public Animator anim; // Reference to the player's animator component.
 	private BackgroundScroller scroller;
 
 	private bool doubleJump = false;
@@ -36,7 +36,6 @@ public class PlatformerCharacter2D : MonoBehaviour
         // Setting up references.
         groundCheck = transform.Find("GroundCheck");
         ceilingCheck = transform.Find("CeilingCheck");
-        anim = GetComponent<Animator>();
 		scroller = GetComponent<BackgroundScroller>();
 
 		previousX = this.transform.localPosition.x;
@@ -47,7 +46,9 @@ public class PlatformerCharacter2D : MonoBehaviour
     {
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
-        anim.SetBool("Ground", grounded);
+
+		if(anim.GetBool("Ground") != grounded)
+        	anim.SetBool("Ground", grounded);
 
         // Set the vertical animation
         anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
@@ -84,7 +85,7 @@ public class PlatformerCharacter2D : MonoBehaviour
         }
 
         // Set whether or not the character is crouching in the animator
-        anim.SetBool("Crouch", crouch);
+        //anim.SetBool("Crouch", crouch);
 
         //only control the player if grounded or airControl is turned on
         if (grounded || airControl)
@@ -122,7 +123,9 @@ public class PlatformerCharacter2D : MonoBehaviour
         {
             // Add a vertical force to the player.
             grounded = false;
-            anim.SetBool("Ground", false);
+
+			if(anim.GetBool("Ground") != grounded)
+            	anim.SetBool("Ground", false);
 
 			rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, 0);
 
@@ -131,6 +134,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 			if(!grounded)
 			{
 				doubleJump = true;
+				//anim.SetBool("Ground", false);
 			}
         }
     }
