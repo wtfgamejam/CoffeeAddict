@@ -142,13 +142,19 @@ MonoBehaviour:
   Collectable: {fileID: 163986, guid: 67c0cad193e6d430a9628f23e9a49621, type: 2}
   CollectableLocation: {fileID: 189050}
   CollectableChance: 3
+  rend: {fileID: 21238150}
+  materials:
+  - {fileID: 2100000, guid: 028efcb3cd2574309aad68b99212b709, type: 2}
+  - {fileID: 2100000, guid: d87274b9a3b0a4b95b0f7b2685eb990a, type: 2}
+  - {fileID: 2100000, guid: 76121c93fd84e45be99982d2f6798d71, type: 2}
+  - {fileID: 2100000, guid: 88fe48d2c26c140fa8af4d07c9c394ca, type: 2}
 --- !u!212 &21203138
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143160}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
@@ -191,8 +197,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a4895f85e82e45f385cb2a610f469f2, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: df84ff058093944f49c49f2c1d95975d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
